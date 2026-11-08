@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import{due}from'./schedule.ts';
+const r={enabled:true,time:'18:00',days:'Every day'};
+assert.equal(due(r,new Date(2026,10,7,18,0)),true);
+assert.equal(due({...r,days:'Weekdays'},new Date(2026,10,7,18,0)),false);
+assert.equal(due({...r,days:'Weekends'},new Date(2026,10,7,18,0)),true);
+assert.equal(due({...r,days:'Weekdays'},new Date(2026,10,9,18,0)),true);
+assert.equal(due({...r,enabled:false},new Date(2026,10,7,18,0)),false);
+assert.equal(due(r,new Date(2026,10,7,18,1)),false);
+console.log('PASS: local schedule time, weekdays, weekends, disabled and nonmatching minute');

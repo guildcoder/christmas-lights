@@ -1,0 +1,17 @@
+{
+  "name": "cross-lights",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node node_modules/vite/bin/vite.js build && node scripts/build-sw.mjs"
+  },
+  "dependencies": {
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "lucide-react": "^1.31.0"
+  },
+  "devDependencies": {
+    "vite": "8.0.13",
+    "typescript": "5.9.3"
+  }
+}
